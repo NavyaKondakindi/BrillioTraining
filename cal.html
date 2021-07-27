@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            text-align: center;
+            padding:30px;
+            margin:auto;
+        }
+        body{
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table border="1px">
+            <tr>
+                <td colspan="4" id="inputLabel">0</td>
+            </tr>
+            <tr>
+                <td><button onclick="pushbtn(this);">7</button></td>
+                <td><button onclick="pushbtn(this);">8</button></td>
+                <td><button onclick="pushbtn(this);">9</button></td>
+                <td><button onclick="pushbtn(this);">*</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="pushbtn(this);">4</button></td>
+                <td><button onclick="pushbtn(this);">5</button></td>
+                <td><button onclick="pushbtn(this);">6</button></td>
+                <td><button onclick="pushbtn(this);">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="pushbtn(this);">1</button></td>
+                <td><button onclick="pushbtn(this);">2</button></td>
+                <td><button onclick="pushbtn(this);">3</button></td>
+                <td><button onclick="pushbtn(this);">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="pushbtn(this);">=</button></td>
+            </tr>
+           
+        </table>
+    </div>
+    <script>
+        var inputlabel=document.getElementById('inputLabel');
+        function pushbtn(obj)
+        {
+            var pushed=obj.innerHTML;
+            if(pushed=='=')
+            {
+                inputLabel.innerHTML=eval(inputlabel.innerHTML)
+            }
+            else if(inputlabel.innerHTML=='0')
+            {
+                inputlabel.innerHTML=pushed;
+            }
+            else {
+                inputlabel.innerHTML+=pushed;
+            }
+        }
+    </script>
+</body>
+</html>
